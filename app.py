@@ -50,7 +50,7 @@ st.markdown("""
     h1, h2, h3, p { color: #f8fafc !important; text-align: right; }
     .stAlert { border-radius: 8px; text-align: right; }
     </style>
-""", unsafe_allow_html=True,)
+""", unsafe_allow_html=True)
 
 # ترويسة المنصة
 st.markdown("<h1 style='text-align: right; font-size: 28px;'>🛡️ منصة تحليل وهندسة الهوية الذكية (AI-OSINT)</h1>", unsafe_allow_html=True)
@@ -104,7 +104,6 @@ with tab_all:
             st.markdown("---")
             st.markdown("#### 🧬 ملف الهوية المستنتجة والارتباطات:")
             
-            # جدول تفصيلي يوضح الحسابات والمنصات المرتبطة بالهدف المجهول
             identity_results = [
                 {"نوع المنصة": "𝕏 (تويتر سابقاً)", "المعرف / اسم المستخدم": "@Ghost_Actor_77", "الإيميل المرتبط": "ghost****@proton.me", "مستوى التطابق": "98% (مرتفع جداً)"},
                 {"نوع المنصة": "GitHub (مستودعات برمجية)", "المعرف / اسم المستخدم": "ghost-sec-dev", "الإيميل المرتبط": "ghost_code@tutanota.com", "مستوى التطابق": "92% (تطابق بصمة الكود)"},
@@ -164,7 +163,6 @@ with tab_posts:
                 {"المرحلة": "المصدر الأول (Root Origin)", "الحساب": "@Root_Origin_VIP", "التوقيت": (now - timedelta(hours=4)).strftime('%Y-%m-%d %H:%M'), "الحدث": "نشر المنشور الأساسي لأول مرة"},
                 {"المرحلة": "تعديل واقتباس", "الحساب": "@Analyst_Media_Hub", "التوقيت": (now - timedelta(hours=3, minutes=30)).strftime('%Y-%m-%d %H:%M'), "الحدث": "إعادة إرسال مع تعديل السياق"},
             ]
-            # إضافة قائمة المتفاعلين الذين أعادوا التغريد
             for i in range(1, 8):
                 post_chain.append({
                     "المرحلة": f"إعادة نشر #{i}",
@@ -195,4 +193,4 @@ with tab_social:
                 {"المنصة": "Medium", "رابط الحساب": "medium.com/@target_blogs", "الحالة": "🟢 مقالات تحليلية منشورة"}
             ]
             df_social = pd.DataFrame(social_data)
-            st.dataframe(df_social, use_container_width=True, hide_index.True)
+            st.dataframe(df_social, use_container_width=True, hide_index=True)
