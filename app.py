@@ -124,7 +124,7 @@ def perform_deep_osint_analysis(query_string):
     # الخادم (Server)
     server_node = f"node-{hasher[:6]}.secure-net.ae"
 
-    # الموقع الجغرافي (تم إرجاعه ليعمل بكفاءة)
+    # الموقع الجغرافي
     locations = ["دبي، الإمارات العربية المتحدة", "أبوظبي، الإمارات", "الرياض، المملكة العربية السعودية", "المنامة، البحرين", "مسقط، عمان"]
     target_location = locations[int(hasher[6:8], 16) % len(locations)]
 
